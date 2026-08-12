@@ -1649,7 +1649,9 @@ textarea.form-input {
     padding: 120px 40px 40px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 40px;
+    overflow-y: auto;
     z-index: 999;
     transition: right var(--transition-medium);
   }
@@ -1669,9 +1671,46 @@ textarea.form-input {
     font-size: 18px;
   }
   
+  .nav-item,
+  .nav-btn-mobile {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  
+  .nav.open .nav-item,
+  .nav.open .nav-btn-mobile {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .nav.open .nav-item:nth-child(1) { transition-delay: 0.1s; }
+  .nav.open .nav-item:nth-child(2) { transition-delay: 0.15s; }
+  .nav.open .nav-item:nth-child(3) { transition-delay: 0.2s; }
+  .nav.open .nav-item:nth-child(4) { transition-delay: 0.25s; }
+  .nav.open .nav-item:nth-child(5) { transition-delay: 0.3s; }
+  .nav.open .nav-item:nth-child(6) { transition-delay: 0.35s; }
+  .nav.open .nav-item:nth-child(7) { transition-delay: 0.4s; }
+  .nav.open .nav-btn-mobile { 
+    transition-delay: 0.45s; 
+    box-shadow: 0 4px 20px rgba(207, 255, 26, 0.3);
+    animation: pulse-glow 2s infinite ease-in-out alternate;
+  }
+
+  @keyframes pulse-glow {
+    0% {
+      box-shadow: 0 4px 12px rgba(207, 255, 26, 0.2);
+    }
+    100% {
+      box-shadow: 0 6px 24px rgba(207, 255, 26, 0.6);
+      transform: scale(1.02);
+    }
+  }
+  
   .nav-btn-mobile {
     display: inline-flex;
-    margin-top: 40px;
+    margin-top: 10px;
   }
   
   .nav-btn-desktop {

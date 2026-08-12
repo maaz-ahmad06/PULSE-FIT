@@ -1611,6 +1611,24 @@ textarea.form-input {
     max-width: 960px;
   }
   
+  /* Justify and shrink navbar for 1024px laptop screens */
+  .logo {
+    font-size: 22px;
+  }
+
+  .nav-list {
+    gap: 20px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+  .header-actions .btn {
+    padding: 12px 22px;
+    font-size: 13px;
+  }
+  
   .about-container, 
   .bmi-container, 
   .contact-container {
